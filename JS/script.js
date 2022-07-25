@@ -1,18 +1,22 @@
-var notas;
-var promedio;
-var suma = 0;
+let notas;
+let promedio;
+let suma = 0;
 
-var nombres = prompt("ingrese su nombre");
-var apellidos = prompt("ingrese su apellido");
+const saludar = () =>{
+    console.log("hola soy una funcion");
+}
+
+let nombres = prompt("ingrese su nombre");
+let apellidos = prompt("ingrese su apellido");
 alert(nombres + " " + apellidos);
 
-var asignatura = prompt("indique asignatura");
+let asignatura = prompt("indique asignatura");
 alert(asignatura);
 
-var nnotas = parseInt(prompt("indique cantidad de notas a promediar"));
+let nnotas = parseInt(prompt("indique cantidad de notas a promediar"));
 
 for (i = 0; i < nnotas; i++) {
-    var notas = parseInt(prompt("ingrese nota " + i));
+    let notas = parseInt(prompt("ingrese nota " + i));
     suma = suma + notas;
 }
 
@@ -27,3 +31,6 @@ if (promedio >= 7) {
 else {
     alert("recursa");
 }
+
+
+
