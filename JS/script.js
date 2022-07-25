@@ -12,7 +12,7 @@ alert(asignatura);
 var nnotas = parseInt(prompt("indique cantidad de notas a promediar"));
 
 for (i = 0; i < nnotas; i++) {
-    var notas = parseInt(prompt("digita la nota " + i));
+    var notas = parseInt(prompt("ingrese nota " + i));
     suma = suma + notas;
 }
 
@@ -27,4 +27,3 @@ if (promedio >= 7) {
 else {
     alert("recursa");
 }
-
