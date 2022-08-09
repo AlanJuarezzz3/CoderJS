@@ -1,12 +1,16 @@
 let datos = [];
 
+const registrarBoton= document.getElementById("registrarBoton");
+
+registrarBoton.onclick=()=>{
+    registrar();
+}
 function registrar(){
     let nombre = document.getElementById('alumno').value;
     let asignatura = document.getElementById('asignatura').value;
     let p1 = document.getElementById('p1').value;
     let p2 = document.getElementById('p2').value;
     
-
     datos.push({
         'alumno': nombre,
         'asignatura': asignatura,
@@ -47,7 +51,9 @@ function promedios(p1,p2) {
     }
 }
 
-function mostrarModal(){
+const mostrarModal= document.getElementById("mostrarModalbtn");
+
+mostrarModal.onclick=()=>{ 
     document.getElementById('modal-registro').classList.add('active');
 }
 
