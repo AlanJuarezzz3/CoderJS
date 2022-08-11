@@ -14,10 +14,6 @@
     <h1>Simulador interactivo</h1>
     <div class="container grid-sm">
         <form>
-            <div class="form-group">
-                <label class="form-label">Nombre del alumno</label>
-                <input type="text" class="form-input" id="alumno" autofocus>
-            </div>
             <div class="form-grup">
                 <button id="mostrarModalbtn" type="button" class="btn btn-primary btn-lg"> Registrar
                     calificaciones</button>
@@ -26,11 +22,13 @@
                 <table class="table table-striped">
                     <thead>
                         <tr>
+                            <td>Nombre</td>
                             <td>Asignatura</td>
                             <td>Parcial 1</td>
                             <td>Parcial 2</td>
                             <td>Promedio</td>
                             <td>Condicion</td>
+                            <td>X</td>
                         </tr>
                     </thead>
                     <tbody id="filas">
@@ -48,6 +46,10 @@
                 </div>
                 <div class="modal-body">
                     <form id="formCalif">
+                        <div class="form-group">
+                            <label class="form-label"> Nombre</label>
+                            <input type="text" class="form-input" id="nombre">
+                        </div>
                         <div class="form-group">
                             <label class="form-label"> Asignatura</label>
                             <input type="text" class="form-input" id="asignatura">
