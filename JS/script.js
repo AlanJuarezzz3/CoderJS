@@ -32,8 +32,7 @@ function crearTabla() {
   eliminar.forEach((elem) =>
     elem.addEventListener("click", () => {
       elem.parentElement.remove();
-      localStorage.removeItem('datos');
-         
+      localStorage.clear();
     })
   );
 }
@@ -56,7 +55,13 @@ function registrar() {
   localStorage.setItem("data", JSON.stringify(datos));
 
   document.getElementById("formCalif").reset();
-  alert("datos guardados");
+  Swal.fire({
+    position: 'top-end',
+    icon: 'success',
+    title: 'Registro Guardado',
+    showConfirmButton: false,
+    timer: 1800
+  });
   crearTabla();
   cerrarModal();
 
@@ -103,3 +108,4 @@ function cerrarModal() {
 }
 
 window.addEventListener("DOMContentLoaded", crearTabla);
+
