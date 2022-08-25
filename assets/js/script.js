@@ -28,7 +28,7 @@ function crearTabla() {
   document.getElementById("filas").innerHTML = fila;
   const eliminar = document.querySelectorAll(".eliminar");
   console.log(eliminar);
-  //   const fila = document.getElementById("tr");
+  
   eliminar.forEach((elem) =>
     elem.addEventListener("click", () => {
       elem.parentElement.remove();
@@ -83,7 +83,7 @@ function registrar() {
     document.getElementById("filas").innerHTML = fila;
     const eliminar = document.querySelectorAll(".eliminar");
     console.log(eliminar);
-    //   const fila = document.getElementById("tr");
+    
     eliminar.forEach((elem) =>
       elem.addEventListener("click", () => {
         elem.parentElement.remove();
@@ -91,7 +91,7 @@ function registrar() {
     );
   }
 
-  //   console.log(eliminar);
+  
 }
 function promedios(p1, p2) {
   if ((parseInt(p1) + parseInt(p2)) / 2 >= 7) {
@@ -108,4 +108,38 @@ function cerrarModal() {
 }
 
 window.addEventListener("DOMContentLoaded", crearTabla);
+
+// registros profes
+function ajax(){
+  const xhttp = new XMLHttpRequest();
+  
+  xhttp.open('GET', 'datos.json', true);
+
+  xhttp.send();
+
+  xhttp.onreadystatechange = function(){
+    if(this.readyState==4 && this.status==200){
+     
+     let arregloDatos = JSON.parse(this.responseText);
+     console.log(arregloDatos);
+      
+      let datoProfe = document.querySelector('#datoProfe');
+      datoProfe.innerHTML ='';
+
+      for (let item of arregloDatos) {
+          datoProfe.innerHTML +=`
+          <tr>
+          <td>${item.profe}</td>
+          <td>${item.materia}</td>
+          <td>${item.escuelas}</td>
+          </tr>`
+      }
+    }
+  }
+
+  xhttp.open("GET", url);
+  xhttp.send();
+
+}
+document.getElementById("RegistroProfes").addEventListener("click", ajax);
 

@@ -1,4 +1,27 @@
+[
+{   
+    "profe":"Marcos",
+    "materia":"Matematica",
+    "escuelas":["Unlam",
+                "UBA",
+                "CoderHouse"]
+},
 {
-    "correo": "admin2",
-    "clave": "admin2"
+    "profe":"Luara",
+    "materia":"Programacion",
+    "escuelas":["Unlam",
+                "CoderHouse"]
+},
+{
+    "profe":"Maradona",
+    "materia":"EduFisica",
+    "escuelas":["CoderHouse"]
+},
+{
+    "profe":"Martina",
+    "materia":"Geografia",
+    "escuelas":["Unlam",
+                "UBA",
+                "CoderHouse"]
 }
+]

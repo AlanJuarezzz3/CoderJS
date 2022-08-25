@@ -122,10 +122,16 @@ let aceptado = function(event){
     const correos = document.getElementById(".inicio").value;
     const contra = document.getElementById(".clave").value;
     console.log(correos, contra);
+
+    let obtenerDatos2 = obtenerDatos();
+    console.log(obtenerDatos2);
+
+    
+
     //creando usuario manual por json
-    if(correos=="admin" && contra=="admin000"){
+    if(correos=="admin" && contra=="admin"){
             window.location.href ='notas.html';
-    }else if(correos=="misRegistros.correo" && contra=="misRegistros.contraseña"){
+    }else if(correos==obtenerDatos2.correo && contra==obtenerDatos2.clave){
             window.location.href ='notas.html';
     }else{
         Swal.fire({
@@ -136,8 +142,8 @@ let aceptado = function(event){
     event.preventDefault();
 }
 async function obtenerDatos(){
-    const response = await fetch("http://127.0.0.1:5500/datos.json");
+    const response = await fetch("loguin.json");
     const json = await response.json();
-    console.log(json);
+    return json
 }
 obtenerDatos();
